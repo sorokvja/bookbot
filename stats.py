@@ -11,3 +11,13 @@ def count_chars(file_contents):
         else:
             chars[char] = 1
     return chars  
+
+def sort_on(val):
+    return val["count"]
+
+def sort_chars(chars):
+    value_list = []
+    for char, count in chars.items():
+        value_list.append({"char": char, "count": count})
+    value_list.sort(reverse=True, key=sort_on)
+    return value_list
